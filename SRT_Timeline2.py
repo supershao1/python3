@@ -2,8 +2,10 @@ import os
 import datetime
 
 filepath = input("Enter the file path:")
-temp = os.path.dirname(__file__)
-srt_file_path = os.path.join(temp, "15.srt")
+filename = input("Enter the file name:")
+temp = os.path.dirname(filepath)
+#temp = os.path.dirname(__file__)
+srt_file_path = os.path.join(temp, filename)
 
 
 def read_srt_file_gen():

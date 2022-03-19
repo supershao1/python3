@@ -86,11 +86,11 @@ starttime = datetime.datetime.now()
 
 # 打开字幕文件
 
-with open(f, 'r') as f1:
+with open(f, 'r', encoding='UTF-8') as f1:
 
     path, name = os.path.split(f)
 
-    f2 = open(os.path.join(path, 'Temporary.txt'), 'a')
+    f2 = open(os.path.join(path, 'Temporary.txt'), 'a', encoding='UTF-8')
 
     for line in f1:
 
@@ -120,9 +120,9 @@ with open(f, 'r') as f1:
 
 # 写入完毕后删除原文件
 
-os.remove(name)
+os.remove(f)
 
-os.rename('Temporary.txt', name)
+os.rename(os.path.join(path, 'Temporary.txt'), os.path.join(path, name))
 
 endtime = datetime.datetime.now()
 
